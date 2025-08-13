@@ -1,6 +1,6 @@
 # Import python packages
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+# from snowflake.snowpark.context import get_active_session   -- ESTA LINEA SE COMENTA, SOLO SIRVE PARA SiS, NO PARA SniS
 #Function COL
 from snowflake.snowpark.functions import col
 
@@ -38,7 +38,13 @@ st.write('The name on your Smoothie will be:', name_on_order)
 # If the line session = get_active_session() appears in your code two times, delete one of the lines. 
 
 
-session = get_active_session()
+
+##Se agrega éste bloque para su uso en GitHub (SniS)
+cnx = st.connection("snowflake")
+session = cnx.session()
+##
+
+#session = get_active_session()    -- ESTA LINEA SE COMENTA, SOLO SIRVE PARA SiS, NO PARA SniS
 
 # Display the Fruit Options List in Your Streamlit in Snowflake (SiS) App. 
 #my_dataframe = session.table("smoothies.public.fruit_options") st.dataframe(data=my_dataframe, use_container_width=True)  *This line selects all the columns of the table
