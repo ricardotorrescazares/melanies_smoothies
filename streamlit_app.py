@@ -1,6 +1,7 @@
 # Import python packages
 import streamlit as st
 import requests
+import pandas
 # from snowflake.snowpark.context import get_active_session   -- ESTA LINEA SE COMENTA, SOLO SIRVE PARA SiS, NO PARA SniS
 #Function COL
 from snowflake.snowpark.functions import col
