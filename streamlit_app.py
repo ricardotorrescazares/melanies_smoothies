@@ -73,7 +73,8 @@ if ingredients_list: #Si la lista tiene valores, muestrala, si no, no
 
     for fruit_chosen in ingredients_list:  #Means: for each fruit_chosen in ingredients_list multiselect box: do everything below this line that is indented. 
         ingredients_string += fruit_chosen +  ' ' #The += operator means "add this to what is already in the variable" so each time the FOR Loop is repeated, a new fruit name is appended to the existing string. 
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+        st.subheader(fruit_chosen + ' Nutrition Information'
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
         sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     #st.write(ingredients_string) #The st.write() command should be part of the IF block but not part of the FOR Loop.
